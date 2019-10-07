@@ -1,0 +1,60 @@
+body{
+    font-family: Arial;
+}
+
+.container{
+    display: grid;
+
+    /* grid-template-columns: 25% 200px 25%; */
+    /* grid-template-rows: 300px 150px; */
+    /* grid-template: filas / columnas; */ /* Esta propiedad resume las dos de arriba */
+    /* grid-template: 300px 100px 100px / 50% 200px 100px; */
+
+
+    
+    /* fr -> Fracción Nueva unidad de medida */
+    /* grid-template: 300px 100px 100px / 1fr 1fr 1fr; */ /* 1fr x 3 veces significa que dividirá el 100% del ancho entre 3 y quedan
+    del mismo ancho de columna y las mantiene responsive */
+
+    /* grid-template: 300px 100px 100px / auto auto auto; */ /* Ajusta el ancho de las columnas de acuerdo al contenido de las mismas */
+
+    /* grid-template: 300px 100px 100px / repeat(3, 1fr);  */ /* Repite 3 veces 1fr en el ancho de columnas y las mantiene responsive */
+    
+    /* Funcion minmax() dice cual es el ancho de columna mínimo y máximo y lo repite 3 veces con funcion repeat() para las 3 columnas */
+    /* grid-template: 300px 100px 100px / repeat(3, minmax(200px, 1fr)); */
+
+    /* También puedo usar minmax() de manera independiente, la primer columna tendrá ese mínimo y máximo de ancho, 
+    pero el resto de columnas (2 columnas) serán responsive hasta que no puedan reajustarse más */
+    /* grid-template: 300px 100px 100px / minmax(200px, 1fr) 1fr 1fr; */
+
+    /* Lo mismo de arriba usando ambas funciones minmax() y repeat() */
+    grid-template: 300px 100px 100px / minmax(200px, 1fr) repeat(2, 1fr);
+
+
+
+    /* column-gap: 30px; */
+    /* row-gap: 30px; */
+    /* gap: espacio-entre-filas espacio-entre-columnas; */ /* Esta propiedad resume las dos de arriba */
+    gap: 10px 30px;
+}
+
+.item{
+    background: lightblue;
+    padding: 10px;
+    border: 1px solid red;
+    /* margin-right: 10px;
+    margin-bottom: 10px; */
+}
+
+.item:nth-of-type(4){ /* Selecciona el 4to elemento con clase item */
+    background: blue;
+    overflow: auto;
+    /* display: subgrid; */ /* Hereda el display:grid y el grid-template de su padre pero al momento de hacer este curso, no funciona esta propiedad */
+    display: grid;
+    grid-template: 50px 50px 50px / 200px 200px 200px;
+    /* display: inline-grid; */ /* Genera un grid al lado del otro, pero esto al momento de hacer el curso no funciona */
+}
+
+.item .item{
+    background: yellow;
+}
