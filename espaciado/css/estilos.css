@@ -1,0 +1,38 @@
+body{
+    font-family: Arial;
+}
+
+.container{
+    display: grid;
+
+    /* grid-template-columns: 25% 200px 25%; */
+    /* grid-template-rows: 300px 150px; */
+    /* grid-template: filas / columnas; */ /* Esta propiedad resume las dos de arriba */
+    grid-template: 300px 100px 100px / 50% 200px 100px;
+    
+    /* column-gap: 30px; */
+    /* row-gap: 30px; */
+    /* gap: espacio-entre-filas espacio-entre-columnas; */ /* Esta propiedad resume las dos de arriba */
+    gap: 10px 100px;
+}
+
+.item{
+    background: lightblue;
+    padding: 10px;
+    border: 1px solid red;
+    /* margin-right: 10px;
+    margin-bottom: 10px; */
+}
+
+.item:nth-of-type(4){ /* Selecciona el 4to elemento con clase item */
+    background: blue;
+    overflow: auto;
+    /* display: subgrid; */ /* Hereda el display:grid y el grid-template de su padre pero al momento de hacer este curso, no funciona esta propiedad */
+    display: grid;
+    grid-template: 50px 50px 50px / 200px 200px 200px;
+    /* display: inline-grid; */ /* Genera un grid al lado del otro, pero esto al momento de hacer el curso no funciona */
+}
+
+.item .item{
+    background: yellow;
+}
