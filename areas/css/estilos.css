@@ -1,0 +1,46 @@
+body{
+    font-family: Arial;
+    margin: 0;
+}
+
+.container{
+    display: grid;
+
+    /* grid-template-columns: 25% 200px 25%; */
+    /* grid-template-rows: 300px 150px; */
+    /* grid-template: filas / columnas; */ 
+    /* Esta propiedad resume las dos de arriba */    
+    grid-template: 150px 1fr 100px / 200px 1fr;
+
+    /* gap: espacio-entre-filas espacio-entre-columnas; */ 
+    gap: 10px; /* Un valor para espacio entre filas Y columnas */
+
+    height: 100vh; /* Para que tome todo el alto del viewport */
+    
+    /* Áreas de cada fila - El layout son 3 filas, dos columnas */
+    grid-template-areas: "header header"
+                         "left contenido"
+                         "footer footer";
+}
+
+.item{
+    background: lightblue;
+    padding: 10px;
+    border: 1px solid red;
+}
+
+.header{
+    grid-area: header;
+}
+
+.left{
+    grid-area: left;
+}
+
+.contenido{
+    grid-area: contenido;
+}
+
+.footer{
+    grid-area: footer;
+}
