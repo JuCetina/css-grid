@@ -1,0 +1,36 @@
+body{
+    font-family: Arial;
+    margin: 0;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    height: 100vh;
+    gap: 3px;
+    
+    /* Pueden tomar los valores stretch (defecto) start end y center */
+    /* Alinea horizontalmente tomando como tamaño dependiendo el contenido */
+    justify-items: center;
+
+    /* Alinea verticalmente tomando como tamaño dependiendo el contenido */
+    align-items: center;
+}
+
+.item{
+    background: lightblue;
+    padding: 10px;
+    border: 1px solid red;
+}
+
+/* Alinear diferente un item */
+.item:nth-of-type(5){
+    /* Alinear verticalmente a sí mismo tomando como tamaño dependiendo el contenido */
+    align-self: start;
+
+    /* Alinear horizontalmente a sí mismo tomando como tamaño dependiendo el contenido */
+    justify-self: start;
+}
+
+
