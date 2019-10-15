@@ -1,0 +1,58 @@
+body{
+    margin: 0;
+    font-family: Arial;
+}
+
+.post{
+    cursor: pointer;
+    position: relative;
+    display: flex; /* .post es un ancla, tiene display inline por defecto */
+}
+
+.post:hover .post-overlay{
+    display: flex;
+}
+
+.post-image{
+    margin: 0;
+}
+
+.post-image img{
+    width: 100%;
+    vertical-align: top; /* Quita un margen que tiene la imagen en la parte de abajo por defecto */
+}
+
+.post-likes,
+.post-comments{
+    display: inline-block;
+    width: 50px;
+    margin: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.post-list{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 293px));
+    justify-content: center;
+    gap: 28px;
+}
+
+.post-overlay{
+   position: absolute;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   top: 0;
+   background-color: rgba(0, 0, 0, .4);
+   display: none;
+   align-items: center;
+   justify-content: center;
+   color: white;
+}
+
+@media screen and (max-width: 767px){
+    .post-list{
+        gap: 3px;
+    }
+}
