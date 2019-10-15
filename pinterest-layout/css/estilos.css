@@ -1,13 +1,18 @@
+body{
+    margin: 0;
+}
+
 .container{
     display: grid;
     grid-template-columns: repeat(auto-fill, 250px);
-    gap: 18px;
+    gap: 12px;
     justify-content: center;
 }
 
 .item img{
-    border-radius: 6px;
+    border-radius: 8px;
     max-width: 100%;
+    vertical-align: top;
 }
 
 .level-1{
